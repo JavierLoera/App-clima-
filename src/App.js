@@ -26,11 +26,11 @@ export default function App() {
 
 	const MySwal = withReactContent(Swal);
 
-	const alerta = () => {
+	const alerta = (mensaje) => {
 		MySwal.fire({
 			icon: "error",
 			title: "Oops...",
-			text: "Algo salio mal, intente con otra ciudad",
+			text: mensaje,
 		});
 	};
 
@@ -51,7 +51,7 @@ export default function App() {
 					});
 				})
 				.catch((e) => {
-					console.log(e);
+					alert(err)
 					alerta();
 				});
 		});
@@ -71,7 +71,7 @@ export default function App() {
 				});
 			})
 			.catch((e) => {
-				console.log(e);
+				alert(e)
 				alerta();
 			});
 	};
