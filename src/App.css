@@ -10,14 +10,13 @@ body {
 }
 
 .contenedor-principal {
-color:white;
+        color:white;
 	height: 100vh;
 	background-size: cover;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	color: #000;
 }
 
 .contenedor-datos {
