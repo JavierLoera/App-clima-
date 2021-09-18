@@ -51,7 +51,7 @@ export default function App() {
 					});
 				})
 				.catch((e) => {
-					alert(err)
+					alert(e)
 					alerta();
 				});
 		});
