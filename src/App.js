@@ -77,25 +77,25 @@ export default function App() {
 	};
 
 	const setbackground = () => {
-		const list = bgPrincipal.current;
+		const bgDiv = bgPrincipal.current;
 		switch (temperatura.descripcion) {
 			case `muy nuboso`:
-				list.style.backgroundImage = `url(${NocheLuna})`;
+				bgDiv.style.backgroundImage = `url(${NocheLuna})`;
 				break;
 			case `nubes` || `cielo claro`:
-				list.style.backgroundImage = `url(${PaisajeSoleado})`;
+				bgDiv.style.backgroundImage = `url(${PaisajeSoleado})`;
 				break;
 			case `nevando` || `nieve`:
-				list.style.backgroundImage = `url(${Nieve})`;
+				bgDiv.style.backgroundImage = `url(${Nieve})`;
 				break;
 			case `lluvia ligera` || `lluvia` || `tormenta`:
-				list.style.backgroundImage = `url(${Tormenta})`;
+				bgDiv.style.backgroundImage = `url(${Tormenta})`;
 				break;
 			case `soleado`:
-				list.style.backgroundImage = `url(${Soleado})`;
+				bgDiv.style.backgroundImage = `url(${Soleado})`;
 				break;
 			default:
-				list.style.backgroundImage = `url(${NocheDespajado})`;
+				bgDiv.style.backgroundImage = `url(${NocheDespajado})`;
 		}
 	};
 
