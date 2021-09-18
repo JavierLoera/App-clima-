@@ -10,6 +10,7 @@ body {
 }
 
 .contenedor-principal {
+color:white;
 	height: 100vh;
 	background-size: cover;
 	display: flex;
