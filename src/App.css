@@ -51,11 +51,11 @@ body {
 		width: 97vw;
 	}
 	.contenedor-principal {
-		height: auto;
+		height: 40%;
 	}
 
 	.contenedor-datos {
-		height: auto;
+		height: 60%;
 	}
 	.contenedor_datos__info {
 		width: 80vw;
