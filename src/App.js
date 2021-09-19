@@ -25,13 +25,17 @@ export default function App() {
 		temp_max: undefined,
 		descripcion: undefined,
 	});
+const [loc,setLoc]=useState({
+latitude:"",
+longitude:""
+}
+)
+const getUserLocation=()=>{}
 
-	const geolocation = useGeolocation({
-  enableHighAccuracy: true, 
-  maximumAge:         15000, 
-  timeout:            12000
-}) 
-	
+useEffect(()=>{
+getUserLocation()
+},[])
+
 	const MySwal = withReactContent(Swal);
 
 	const alerta = (mensaje) => {
