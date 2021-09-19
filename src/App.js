@@ -28,9 +28,32 @@ export default function App() {
 const [loc,setLoc]=useState({
 latitude:"",
 longitude:""
+})
+
+
+const getUserLocation=()=>{
+  if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(mostrarCoordenada,errores,{timeout:50,maximumAge:60000});
+        } else {
+            alert('El navegador no dispone la capacidad de geolocalización');
+        }
 }
-)
-const getUserLocation=()=>{}
+
+function mostrarCoordenada(posicion) {
+        setLoc({
+   latitude:posicion.coords.latitude,
+longitude:posicion.coords.kongitude
+     }) 
+    }
+
+function errores(err) {
+    if (err.code == err.TIMEOUT) 
+        alert("Se ha superado el tiempo de espera");
+    if (err.code == err.PERMISSION_DENIED)     
+        alert("El usuario no permitió informar su posición");
+    if (err.code == err.POSITION_UNAVAILABLE)                 
+        alert("El dispositivo no pudo recuperar la posición actual");
+    }
 
 useEffect(()=>{
 getUserLocation()
@@ -49,7 +72,7 @@ getUserLocation()
 	const bgPrincipal = useRef(null);
 
 	useEffect(() => {
-			tempPosicion(geolocation)
+			tempPosicion(loc)
 				.then((data) => {
 					setTemperatura({
 						temperatura: Math.round(data.main.temp - 273.15),
@@ -65,7 +88,7 @@ getUserLocation()
 					alert(e)
 					alerta();
 				});
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [loc]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const updateCiudad = (ciudad) => {
 		traerDatosXCiudad(ciudad)
