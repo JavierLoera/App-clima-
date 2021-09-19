@@ -4,6 +4,7 @@ import Temperatura from "./components/Tempetura";
 import Form from "./components/Form";
 import tempPosicion from "./tempPosicion.js";
 import traerDatosXCiudad from "./datosXciudad.js";
+import useGeolocation from 'react-hook-geolocation'
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import NocheLuna from "./img/NocheLuna.svg";
@@ -12,6 +13,7 @@ import NocheDespajado from "./img/NocheDespejado.svg";
 import PaisajeSoleado from "./img/PaisajeSoleado.jpg";
 import Soleado from "./img/Soleado.jpg";
 import Tormenta from "./img/Tormenta.jpg";
+
 
 export default function App() {
 	const [temperatura, setTemperatura] = useState({
@@ -24,6 +26,12 @@ export default function App() {
 		descripcion: undefined,
 	});
 
+	const geolocation = useGeolocation({
+  enableHighAccuracy: true, 
+  maximumAge:         15000, 
+  timeout:            12000
+}) 
+	
 	const MySwal = withReactContent(Swal);
 
 	const alerta = (mensaje) => {
@@ -37,8 +45,7 @@ export default function App() {
 	const bgPrincipal = useRef(null);
 
 	useEffect(() => {
-		navigator.geolocation.getCurrentPosition(function (position) {
-			tempPosicion(position)
+			tempPosicion(geolocation)
 				.then((data) => {
 					setTemperatura({
 						temperatura: Math.round(data.main.temp - 273.15),
