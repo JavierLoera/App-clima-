@@ -61,7 +61,6 @@ export default function App() {
 					alert(e)
 					alerta();
 				});
-		});
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const updateCiudad = (ciudad) => {
