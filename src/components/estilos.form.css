@@ -15,6 +15,7 @@
 }
 
 input[type="text"] {
+	caret-color: white;
 	background-color: transparent;
 	border: 0;
 	border-bottom: solid 1px #f16051;
@@ -33,7 +34,7 @@ input[type="text"] {
 }
 
 input:-webkit-autofill {
-	box-shadow: 0 0 0 30px #2c3e50 inset;
+	box-shadow: 0 0 0 30px #233eed inset;
 	-webkit-text-fill-color: #fff !important;
 }
 
@@ -69,25 +70,11 @@ button:active {
 	}
 
 	input[type="text"] {
-		width: 40%;
+		width: 50%;
 		padding-bottom: 4px;
 		letter-spacing: 2px;
 		margin-bottom: 10px;
 		margin-right: 20px;
 		font-size: 15px;
-	}
-
-	button {
-		border: 0;
-		padding: 8px 20px;
-		margin: 0 2px;
-		border-radius: 2px;
-		font-weight: lighter;
-		letter-spacing: 1px;
-		font-size: 15px;
-		cursor: pointer;
-		background-color: #f16051;
-		color: #fff;
-		font-weight: 100;
 	}
 }
