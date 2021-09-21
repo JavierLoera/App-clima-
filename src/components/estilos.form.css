@@ -56,7 +56,7 @@ button:active {
 	outline: none;
 }
 
-@media (max-width: 765px) {
+@media (max-width: 765px) and (orientation: landscape) {
 	.contenedor__titulo {
 		font-size: 15px;
 		letter-spacing: 1px;
