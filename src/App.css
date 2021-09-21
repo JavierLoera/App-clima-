@@ -74,7 +74,8 @@ body {
 
 @media (orientation: landscape){
 body {
-		width: 300vw;
+		width: 100vw;
+height:300vh;
 	}
 	.contenedor-principal {
 		height: 150vh;
