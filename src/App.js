@@ -39,36 +39,6 @@ export default function App() {
 		});
 	};
 
-	//referencia al contenedor principalpara cambiar la imagen de fondo
-	const bgPrincipal = useRef(null);
-	//dependiendo de la descripcion de la temperatura
-	const setbackground = () => {
-		const bgDiv = bgPrincipal.current;
-		switch (temperatura.descripcion) {
-			case `muy nuboso`:
-				bgDiv.style.backgroundImage = `url(${NocheLuna})`;
-				break;
-			case `nubes` || `cielo claro`:
-				bgDiv.style.backgroundImage = `url(${PaisajeSoleado})`;
-				break;
-			case `nevando` || `nieve`:
-				bgDiv.style.backgroundImage = `url(${Nieve})`;
-				break;
-			case `lluvia ligera` || `lluvia` || `tormenta`:
-				bgDiv.style.backgroundImage = `url(${Tormenta})`;
-				break;
-			case `soleado`:
-				bgDiv.style.backgroundImage = `url(${Soleado})`;
-				break;
-			default:
-				bgDiv.style.backgroundImage = `url(${NocheDespajado})`;
-		}
-	};
-
-	//efecto para caundo se actualize la temperatura
-	useEffect(() => {
-		setbackground();
-	}, [temperatura]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	//funcion para la localizacion que actualizac el estado a la posicion actual
 	function mostrarCoordenada(posicion) {
@@ -147,6 +117,37 @@ export default function App() {
 				alerta("ooPs ocurrio un error, pruebe con otra ciudad");
 			});
 	};
+
+//referencia al contenedor principalpara cambiar la imagen de fondo
+	const bgPrincipal = useRef(null);
+	//dependiendo de la descripcion de la temperatura
+	const setbackground = () => {
+		const bgDiv = bgPrincipal.current;
+		switch (temperatura.descripcion) {
+			case `muy nuboso`:
+				bgDiv.style.backgroundImage = `url(${NocheLuna})`;
+				break;
+			case `nubes` || `cielo claro`:
+				bgDiv.style.backgroundImage = `url(${PaisajeSoleado})`;
+				break;
+			case `nevando` || `nieve`:
+				bgDiv.style.backgroundImage = `url(${Nieve})`;
+				break;
+			case `lluvia ligera` || `lluvia` || `tormenta`:
+				bgDiv.style.backgroundImage = `url(${Tormenta})`;
+				break;
+			case `soleado`:
+				bgDiv.style.backgroundImage = `url(${Soleado})`;
+				break;
+			default:
+				bgDiv.style.backgroundImage = `url(${NocheDespajado})`;
+		}
+	};
+
+	//efecto para caundo se actualize la temperatura
+	useEffect(() => {
+		setbackground();
+	}, [temperatura]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<div className="row">
