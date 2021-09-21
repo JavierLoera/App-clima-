@@ -94,8 +94,8 @@ export default function App() {
 	const getUserLocation = () => {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(mostrarCoordenada, errores, {
-				enableHighAccuracy: true,
-				timeout: 5000,
+				enableHighAccuracy: false,
+				timeout: 1000,
 				maximumAge: 0,
 			});
 		} else {
