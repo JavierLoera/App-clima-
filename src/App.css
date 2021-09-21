@@ -46,7 +46,7 @@ body {
 	font-weight: 200;
 }
 
-@media (max-width: 765px) and (orientation: landscape) {
+@media (max-width: 765px){
 	body {
 		width: 97vw;
 	}
@@ -56,6 +56,32 @@ body {
 
 	.contenedor-datos {
 		height: 60vh;
+	}
+	.contenedor_datos__info {
+		width: 80vw;
+		font-size: 15px;
+		font-weight: 50;
+	}
+
+	.datos__titulo {
+		padding: 10px 0 10px 0;
+		font-weight: 40;
+	}
+	.datos__valor {
+		font-weight: 40;
+	}
+}
+
+@media (orientation: landscape){
+body {
+		width: 300vw;
+	}
+	.contenedor-principal {
+		height: 150vh;
+	}
+
+	.contenedor-datos {
+		height: 150vh;
 	}
 	.contenedor_datos__info {
 		width: 80vw;
