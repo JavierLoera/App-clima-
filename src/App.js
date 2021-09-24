@@ -65,7 +65,7 @@ export default function App() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(mostrarCoordenada, errores, {
 				enableHighAccuracy: false,
-				timeout: 20000,
+				timeout: 6000,
 				maximumAge: 0,
 			});
 		} else {
